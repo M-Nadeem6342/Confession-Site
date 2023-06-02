@@ -1,0 +1,64 @@
+<% if (user) { %>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confession Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body class="image">
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+      <div class="container-fluid justify-content-between">
+        <!-- Left elements -->
+        <div class="d-flex">
+          <a class="navbar-brand" href="/">
+            <h1>Home</h1>
+          </a>
+        </div>
+        <!-- Left elements -->
+
+        <!-- Center elements -->
+        <ul class="navbar-nav flex-row d-none d-md-flex">
+          <li class="nav-item me-3 me-lg-1 active">
+            <a class="nav-link" href="/write">
+              <i class="fas fa-pencil-alt" ></i> Write a story
+            </a>
+          </li>
+        </ul>
+        <!-- Center elements -->
+
+        <!-- Right elements -->
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item me-3 me-lg-1">
+            <a class="nav-link d-sm-flex align-items-sm-center" href="">
+              <img src="<%= user.photos[0].value%>" class="rounded-circle" height="25"
+                alt="User Profile" loading="lazy" />
+              <strong class="d-none d-sm-block ms-1"><%= user.displayName %></strong>
+            </a>
+          </li>
+          
+          <li class="nav-item me-3 me-lg-1 active">
+            <a class="nav-link" href="/logout">
+              <!-- logout icon -->
+              <i class="fas fa-sign-out-alt" ></i> Logout
+            </a>
+          </li>
+        </ul>
+        <!-- Right elements -->
+      </div>
+    </nav>
+    <!-- Navbar -->
+    <% } else { %>
+
+      <h1> Please login to access this page </h1>
+      <% } %>
